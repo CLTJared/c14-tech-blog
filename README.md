@@ -7,3 +7,13 @@ git clone git@github.com:CLTJared/c14-tech-blog.git
 ```
 
 # Usage
+
+
+## Demo
+To see a live demo, visit the [Heroku Deployment](#) to demo this application.
+
+### Walk-Thru
+```md
+This should be updated prior to turn in of assignment
+```
+![Walk-Thru](./assets/demo/walk-thru.gif)

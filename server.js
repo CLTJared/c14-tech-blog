@@ -1,0 +1,38 @@
+const path = require('path');
+const express = require('express');
+const routes = require('./controller');
+// import sequelize connection
+const sequelize = require('./config/connection');
+// import handlebars
+const handlebars = require('express-handlebars');
+// import express sessions
+const session = require('express-session');
+
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+
+const sessionConfig = {
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: false,
+};
+
+//Use Express Session & get config from sessionConfig
+app.use(session(sessionConfig));
+
+//Handlebars.js
+const hbsjs = handlebars.create(/* IF NEEDED, PUT HELPERS HERE AND UNCOMMENT { helpers } */);
+app.engine('handlebars', hbsjs.engine);
+app.set('view engine', 'handlebars');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(routes);
+
+// sync sequelize models to the database, then turn on the server
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
+});

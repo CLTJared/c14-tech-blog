@@ -7,7 +7,12 @@ git clone git@github.com:CLTJared/c14-tech-blog.git
 ```
 
 # Usage
+From the command line, run the following to start the server.
+```bash
+node server.js
+```
 
+Navigate to [localhost:3001](http://localhost:3001) to view the page locally.
 
 ## Demo
 To see a live demo, visit the [Heroku Deployment](#) to demo this application.

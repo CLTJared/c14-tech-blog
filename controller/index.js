@@ -6,11 +6,27 @@ const authRoute = require('./auth');
 //router.use('/api', apiRoutes)
 
 router.use('/dashboard', dashboardRoute)
-router.use('/login', authRoute)
-router.use('/signup', authRoute)
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('account', { signup: false, layout : 'main' });
+});
+
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('account', { signup: true, layout : 'main' });
+});
 
 //Homepage routing
-router.use('/', async (req, res) => {
+router.get('/', async (req, res) => {
 
   const dbPostData = await Post.findAll({
     order: [[ 'created_on', 'DESC']],

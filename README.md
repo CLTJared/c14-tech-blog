@@ -15,10 +15,7 @@ node server.js
 Navigate to [localhost:3001](http://localhost:3001) to view the page locally.
 
 ## Demo
-To see a live demo, visit the [Heroku Deployment](#) to demo this application.
+To see a live demo, visit the [Heroku Deployment](https://jaredclt-tech-blog-f7a5c76ec55a.herokuapp.com/) to demo this application.
 
-### Walk-Thru
-```md
-This should be updated prior to turn in of assignment
-```
-![Walk-Thru](./assets/demo/walk-thru.gif)
+### Screenshot
+![Walk-Thru](./assets/demo/site-screenshot.JPG)

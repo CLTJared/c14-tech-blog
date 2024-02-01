@@ -1,0 +1,47 @@
+{{> navigation}}
+
+{{#if signup}}
+
+    <form class="signup-form">
+        <div>
+            <label for="username-signup">Name: </label>
+            <input type="text" id="username-signup" />
+        </div>
+        <div>
+            <label for="email-signup">Email: </label>
+            <input type="text" id="email-signup" />
+        </div>
+        <div>
+            <label for="password-signup">Password: </label>
+            <input type="password" id="password-signup" />
+        </div>
+        <div>
+            <button type="submit">Sign up</button>
+        </div>
+        <span><a href="/login">Login instead?</a></span>
+    </form>
+
+    <script src="./js/signup.js"></script>
+
+{{else}}
+
+    <form class="login-form">
+    <div>
+        <label for="email-login">Email: </label>
+        <input type="text" id="email-login" />
+    </div>
+    <div>
+        <label for="password-login">Password: </label>
+        <input type="password" id="password-login" />
+    </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+    <span><a href="/signup">Sign up instead?</a></span>
+    </form>
+
+    
+
+    <script src="./js/login.js"></script>
+
+{{/if}}

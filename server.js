@@ -7,6 +7,7 @@ const sequelize = require('./config/connection');
 const handlebars = require('express-handlebars');
 // import express sessions
 const session = require('express-session');
+const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -22,7 +23,7 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 
 //Handlebars.js
-const hbsjs = handlebars.create(/* IF NEEDED, PUT HELPERS HERE AND UNCOMMENT { helpers } */);
+const hbsjs = handlebars.create({ helpers });
 app.engine('handlebars', hbsjs.engine);
 app.set('view engine', 'handlebars');
 

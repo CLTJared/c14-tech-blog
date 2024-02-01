@@ -4,6 +4,6 @@
     <h3 name="post-header">{{title}}</h3>
     <p class="sub" name="post-publish">Posted on: {{format_date created_on}} by {{user.name}}</p>
     <p class="post" name="post-content">{{text}}</p>
-    <span name="post-footer">Comments: 0 | Leave a comment.</span>
+    <span name="post-comments"><strong>Comments</strong>: {{comments.length}} | Leave a comment.</span>
 </section>
 {{/each}}
